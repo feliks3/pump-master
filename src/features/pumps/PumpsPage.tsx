@@ -99,6 +99,7 @@ const PumpsPage = () => {
         setPumps((prev) => [...prev, created]);
       }
 
+      fetchPumps();
       setShowModal(false);
       setNewPump(emptyPump);
       setEditingId(null);

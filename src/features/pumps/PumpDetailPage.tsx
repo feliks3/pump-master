@@ -28,7 +28,7 @@ const PumpDetailPage = () => {
       </button>
 
       <div className="flex items-start justify-between mb-8">
-        <h1 className="text-3xl font-bold">Pump {pump.id}</h1>
+        <h1 className="text-3xl font-bold">{pump.name}</h1>
         <div className="text-sm text-gray-500 space-y-1 text-right">
           <div>
             <span className="font-semibold">Pump ID:</span> {pump.id}
