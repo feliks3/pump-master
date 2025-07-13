@@ -1,11 +1,14 @@
 import { Outlet } from 'react-router-dom';
+import Header from './Header';
 
 const AppLayout = () => {
   return (
-    <h1>
-      <p>app layout</p>
-      <Outlet />
-    </h1>
+    <>
+      <Header />
+      <div className="max-w-7xl mx-auto px-4">
+        <Outlet />
+      </div>
+    </>
   );
 };
 

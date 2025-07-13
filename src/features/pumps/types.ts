@@ -1,12 +1,46 @@
+export type PumpType =
+  | 'Centrifugal'
+  | 'Submersible'
+  | 'Diaphragm'
+  | 'Rotary'
+  | 'Peristaltic';
+
+export type OffsetUnit = 'sec' | 'ft';
+
+export type PumpStatus =
+  | 'Operational'
+  | 'Idle'
+  | 'Stopped'
+  | 'Fault'
+  | 'Maintenance';
+
+export type AreaBlock =
+  | 'Area A'
+  | 'Area B'
+  | 'Area C'
+  | 'Area D'
+  | 'Area E'
+  | 'Area F'
+  | 'Area G'
+  | 'Area H'
+  | 'Area I'
+  | 'Area J';
+
 export interface Pump {
-  id: string;
+  id: number;
   name: string;
-  type: string; // Rotary / Centrifugal / Other
-  status: 'Active' | 'Inactive';
-  lat: string;
-  lon: string;
-  flowRate: string; // e.g. "1200"
-  minPressure: number;
-  maxPressure: number;
-  currentPressure: number;
+  type: PumpType;
+  areaBlock: AreaBlock;
+  latitude: number;
+  longitude: number;
+  flowRate: number; // GPM
+  offsetValue: number;
+  offsetUnit: OffsetUnit;
+  pressureCurrent: number;
+  pressureMin: number;
+  pressureMax: number;
+  status: PumpStatus;
+  lastUpdated: string;
 }
+
+export type NewPump = Omit<Pump, 'id' | 'lastUpdated'>;
